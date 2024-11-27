@@ -34,8 +34,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+<body class="login-page">
     <div class="login-container">
-        <h1>Login</h1>
+        <h1>Login to Sajilo Ticket</h1>
         <?php if ($error): ?>
             <p class="error"><?php echo $error; ?></p>
         <?php endif; ?>
@@ -49,5 +50,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button type="submit">Login</button>
         </form>
     </div>
+</body>
+
+
 </body>
 </html>

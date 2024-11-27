@@ -1,13 +1,12 @@
 <?php
-$host = 'localhost'; // Database host
-$db = 'dashboard_project'; // Database name
-$user = 'root'; // Database username
-$pass = ''; // Database password
+$host = 'localhost'; // or your host
+$username = 'root'; // your database username
+$password = ''; // your database password
+$dbname = 'dashboard_project';
 
-try {
-    $conn = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Database connection failed: " . $e->getMessage());
+$conn = new mysqli($host, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 ?>

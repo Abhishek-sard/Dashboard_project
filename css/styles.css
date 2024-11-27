@@ -1,106 +1,89 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+/* General Reset */
+body, h1, p, ul, li {
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
 }
 
-.login-container, .dashboard-container {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    background: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+ul, li {
+    list-style: none;
+}
+
+/* Body Styles */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4; /* Default background for non-login pages */
+}
+
+/* Background Image for Login Page */
+body.login-page {
+    background: url('../nagarbus.jpg') no-repeat center center/cover;
+    background-size: cover; /* Ensure the image fully covers the screen */
+}
+
+/* Login Container */
+.login-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: #555;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+    font-size: 0.9em;
+    color: #666;
 }
 
 input {
-    width: calc(100% - 22px);
-    margin-bottom: 15px;
+    width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
 }
 
 button {
-    padding: 10px 15px;
-    background: #007BFF;
-    border: none;
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
     color: white;
+    border: none;
     border-radius: 5px;
+    font-size: 1em;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Error Message */
 .error {
     color: red;
     font-size: 0.9em;
-}
-/* General Reset */
-body, ul, li {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    font-family: Arial, sans-serif;
+    margin-bottom: 15px;
 }
 
 /* Navbar Styles */
-.navbar {
-    background-color: #333;
-    color: white;
-    padding: 20px 30px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
 
-.navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.navbar-brand {
-    font-size: 1.5em;
-    font-weight: bold;
-    text-decoration: none;
-    color: white;
-}
-
-.navbar-menu {
-    display: flex;
-    gap: 15px;
-}
-
-.navbar-menu li {
-    display: inline;
-}
-
-.navbar-menu a {
-    text-decoration: none;
-    color: white;
-    padding: 8px 12px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-.navbar-menu a:hover {
-    background-color: #555;
-}
-
-.logout-btn {
-    background-color: #e74c3c;
-    color: white;
-    padding: 8px 12px;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-.logout-btn:hover {
-    background-color: #c0392b;
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -111,5 +94,25 @@ body, ul, li {
 
     .navbar-container {
         flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-brand {
+        margin-bottom: 10px;
+    }
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .login-container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.5em;
     }
 }
